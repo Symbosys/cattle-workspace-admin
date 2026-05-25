@@ -8,11 +8,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App";
+import { Toaster } from "sonner";
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
     <App />
+    <Toaster richColors position="top-right" />
   </StrictMode>
 );
 

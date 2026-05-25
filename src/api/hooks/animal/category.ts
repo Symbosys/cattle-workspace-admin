@@ -9,6 +9,7 @@ import type {
   CreateSubCategoryRequest,
   UpdateSubCategoryRequest
 } from "../../../types/animal.types";
+import { showError, successMesssage } from "@/utils/message";
 
 // ======================== CATEGORY ========================
 
@@ -28,6 +29,10 @@ export const useCreateCategory = (
       return response.data;
     },
     ...options,
+    onSuccess : () => {
+      successMesssage("Category created successfully")
+    },
+    onError: (error) => showError(error)
   });
 };
 
@@ -60,6 +65,10 @@ export const useUpdateCategory = (
       return response.data;
     },
     ...options,
+    onSuccess: () => {
+      successMesssage("Category updated successfully")
+    },
+    onError: (error) => showError(error)
   });
 };
 
@@ -82,6 +91,10 @@ export const useCreateSubCategory = (
       return response.data;
     },
     ...options,
+    onSuccess: () => {
+      successMesssage("Sub Category created successfully")
+    },
+    onError: (error) => showError(error)
   });
 };
 
@@ -115,5 +128,9 @@ export const useUpdateSubCategory = (
       return response.data;
     },
     ...options,
+    onSuccess: () => {
+      successMesssage("Sub Category updated successfully")
+    },
+    onError: (error) => showError(error)
   });
 };
